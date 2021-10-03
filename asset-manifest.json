@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Optimize-tic-tac-toe/static/css/main.a36dcb62.chunk.css",
+    "main.js": "/Optimize-tic-tac-toe/static/js/main.44c0d862.chunk.js",
+    "main.js.map": "/Optimize-tic-tac-toe/static/js/main.44c0d862.chunk.js.map",
+    "runtime-main.js": "/Optimize-tic-tac-toe/static/js/runtime-main.50fec7db.js",
+    "runtime-main.js.map": "/Optimize-tic-tac-toe/static/js/runtime-main.50fec7db.js.map",
+    "static/js/2.e56ca1f0.chunk.js": "/Optimize-tic-tac-toe/static/js/2.e56ca1f0.chunk.js",
+    "static/js/2.e56ca1f0.chunk.js.map": "/Optimize-tic-tac-toe/static/js/2.e56ca1f0.chunk.js.map",
+    "index.html": "/Optimize-tic-tac-toe/index.html",
+    "static/css/main.a36dcb62.chunk.css.map": "/Optimize-tic-tac-toe/static/css/main.a36dcb62.chunk.css.map",
+    "static/js/2.e56ca1f0.chunk.js.LICENSE.txt": "/Optimize-tic-tac-toe/static/js/2.e56ca1f0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.50fec7db.js",
+    "static/js/2.e56ca1f0.chunk.js",
+    "static/css/main.a36dcb62.chunk.css",
+    "static/js/main.44c0d862.chunk.js"
+  ]
+}
