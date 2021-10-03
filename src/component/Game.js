@@ -186,7 +186,7 @@ function Game(){
     // check diagonal line
     for(let j=0;j<size;j++){
       for(let i=0;i<=size;i++){
-        if(squares[j+i*size] && (!checkFinalLine(i,j,size)) 
+        if(squares[j+i*size] && (!checkFinalLineDiag(i,j,size)) 
         && squares[j+i*size] === squares[(j+1)+(i+1)*size] 
         && squares[(j+1)+(i+1)*size] === squares[(j+2)+(i+2)*size] 
         && squares[(j+2)+(i+2)*size] === squares[(j+3)+(i+3)*size]
@@ -203,7 +203,7 @@ function Game(){
     // check reverse diagonal line
     for(let j=0;j<size;j++){
       for(let i=0;i<=size;i++){
-        if(squares[j+(size - i - 1)*size] && ((j)+(size - (i) - 1)*size <= size*(size-1) + (size-5))
+        if(squares[j+(size - i - 1)*size] && (!checkFinalLineReverseDiag(i,j,size))
         && squares[j+(size - i - 1)*size] === squares[(j+1)+(size - (i+1) - 1)*size] 
         && squares[(j+1)+(size - (i+1) - 1)*size] === squares[(j+2)+(size - (i+2) - 1)*size] 
         && squares[(j+2)+(size - (i+2) - 1)*size] === squares[(j+3)+(size - (i+3) - 1)*size]
@@ -227,10 +227,16 @@ function Game(){
   function checkNULL(square){
     return square.includes(null);
   }
-  function checkFinalLine(i,j,size){
+  function checkFinalLineDiag(i,j,size){
     return ((i)*size + (j) + 1 )%size === 0 
     || ((i+1)*size + (j+1) + 1)%size === 0
     || ((i+2)*size + (j+2) + 1 )%size === 0
     || ((i+3)*size + (j+3) + 1 )%size === 0;
+  }
+  function checkFinalLineReverseDiag(i,j,size){
+    return (j+(size - i - 1)*size + 1)%size === 0 
+    || ((j+1)+(size - (i+1) - 1)*size + 1)%size === 0
+    || ((j+2)+(size - (i+2) - 1)*size + 1)%size === 0
+    || ((j+2)+(size - (i+2) - 1)*size + 1)%size === 0;
   }
 export default Game;  
