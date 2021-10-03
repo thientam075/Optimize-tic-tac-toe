@@ -17,7 +17,6 @@ function Game(){
     const historyCurrent = history;
     const current = historyCurrent[stepNumber];
     const winner = calculateWinner5(current.squares,size);
-    console.log(winner ? winner.winnerSquares : '');
     const moves = historyCurrent.map((step, move) => {
     const desc = move ?
           'Go to move #' + move:
@@ -187,7 +186,7 @@ function Game(){
     // check diagonal line
     for(let j=0;j<size;j++){
       for(let i=0;i<=size;i++){
-        if(squares[j+i*size] && (j+4+(i+4)*size < size*size) 
+        if(squares[j+i*size] && (!checkFinalLine(i,j,size)) 
         && squares[j+i*size] === squares[(j+1)+(i+1)*size] 
         && squares[(j+1)+(i+1)*size] === squares[(j+2)+(i+2)*size] 
         && squares[(j+2)+(i+2)*size] === squares[(j+3)+(i+3)*size]
@@ -204,7 +203,7 @@ function Game(){
     // check reverse diagonal line
     for(let j=0;j<size;j++){
       for(let i=0;i<=size;i++){
-        if(squares[j+(size - i - 1)*size] && ((j+4)+(size - (i+4) - 1)*size < size*size) 
+        if(squares[j+(size - i - 1)*size] && ((j)+(size - (i) - 1)*size <= size*(size-1) + (size-5))
         && squares[j+(size - i - 1)*size] === squares[(j+1)+(size - (i+1) - 1)*size] 
         && squares[(j+1)+(size - (i+1) - 1)*size] === squares[(j+2)+(size - (i+2) - 1)*size] 
         && squares[(j+2)+(size - (i+2) - 1)*size] === squares[(j+3)+(size - (i+3) - 1)*size]
@@ -228,5 +227,10 @@ function Game(){
   function checkNULL(square){
     return square.includes(null);
   }
-  
+  function checkFinalLine(i,j,size){
+    return ((i)*size + (j) + 1 )%size === 0 
+    || ((i+1)*size + (j+1) + 1)%size === 0
+    || ((i+2)*size + (j+2) + 1 )%size === 0
+    || ((i+3)*size + (j+3) + 1 )%size === 0;
+  }
 export default Game;  
